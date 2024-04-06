@@ -1,0 +1,150 @@
+@media (min-width: 701px) {
+  ::-webkit-scrollbar {
+    width: 1vh;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(182, 7%, 6%, 1);
+    border-radius: 100vw;
+    margin-block: 0.5em;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(182, 20%, 20%, 0.5);
+    border-radius: 100vw;
+  }
+
+  ::-webkit-scrollbar-track:hover {
+    background: hsl(182, 10%, 10%, 1);
+    border-radius: 100vw;
+    margin-block: 0.5em;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(182, 25%, 25%, 1);
+  }
+}
+
+.c-item {
+  height: 600px;
+}
+
+.c-img {
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4) hue-rotate(240deg);
+}
+
+.div-carousel {
+  background-color: black;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  opacity: 0;
+  height: 2px;
+  width: 100%;
+  max-width: 200px;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.nav-link:hover::after {
+  opacity: 1;
+  transition: all 0.4s ease-in;
+}
+
+.nav-link.current::after {
+  background-color: white;
+  opacity: 1;
+  transition: all 0.4s ease-in;
+}
+
+.nav-link.current {
+  opacity: 1;
+  transition: all 0.4s ease-in;
+}
+
+.nav-link:not(.current) {
+  opacity: 0.75;
+  transition: all 0.4s ease-in;
+}
+
+.menu-items:hover .nav-link:hover {
+  opacity: 1;
+  transition: all 0.4s ease-in;
+}
+.menu-items:hover .nav-link {
+  opacity: 0.3;
+  transition: all 0.4s ease-in;
+}
+
+body {
+  background: rgb(0, 0, 0);
+  /* animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; */
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.project-image {
+  display: block;
+  margin: auto;
+  max-width: 800px;
+  width: 100%;
+  align-items: center;
+  filter: brightness(0.8) hue-rotate(45deg);
+}
+
+p {
+  text-align: justify-center;
+}
+
+h3 {
+  text-align: justify;
+}
+
+@media only screen and (max-width: 600px) {
+  h3 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  p {
+    text-align: justify-center;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
+}
+
+.text-fade.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-20%);
+  transition: all 1s ease;
+}
+
+.text-fade.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
